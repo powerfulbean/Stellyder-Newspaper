@@ -153,7 +153,7 @@ class cStellyderEngineTheme(cStellyderEngineBase):
         tag1 = objBs.find_all('div',class_ = class_name)
         target = []
         title= objBs.find('title').string
-        target.append('title:'+ title + '\n')
+        target.append( title + '\n' + '\n')
         for target1 in tag1:   # can try using .descendants
             level2 = target1.find_all('p')
             for target2 in level2:
@@ -183,7 +183,6 @@ class cStellyderEngineTheme(cStellyderEngineBase):
                         for i in target:
                             if(i!=None):
                                 f.write(i)
-                
             
         
         
