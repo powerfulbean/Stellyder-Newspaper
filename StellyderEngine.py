@@ -175,11 +175,14 @@ class cStellyderEngineTheme(cStellyderEngineBase):
         
         search_word = ["cancer", "diabete"]
         
-        
+        flag = 0;
         for i in target:
             for j in search_word:
                 if( i.find(j)!=-1):
-                    with open(target_root_folder+title+'.txt', 'a', encoding='utf-8') as f:
+                    flag = 1
+        
+        if( flag ==1):
+            with open(target_root_folder+title+'.txt', 'a', encoding='utf-8') as f:
                         for i in target:
                             if(i!=None):
                                 f.write(i)
