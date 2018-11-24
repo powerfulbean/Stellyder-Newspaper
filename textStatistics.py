@@ -34,6 +34,10 @@ for file_name in filelist[0]:
         content = f.read()
         freq_temp = Coll.Counter(re.split(r"[()\,.;:'?!\s\“”’‘\d\"\']+",content))
         freq_sum += freq_temp
-        
-answer=freq_sum.most_common(100)
+
+answer = freq_sum.most_common(2642)
+with open('a.txt', 'a', encoding='utf-8') as f:
+                        for i in answer:
+                                f.write(str(i))
+                                f.write('\n')
 

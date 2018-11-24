@@ -68,6 +68,8 @@ class cStellyderEngineTheme(cStellyderEngineBase):
         else:
             while not self.subThemeBuff.empty():
                 target_url = self.subThemeBuff.get()
+                if (target_url.find("https")==-1):
+                    continue
                 response = REQ.get(target_url,headers=self.header)
                 response.close()
                 content = response.content
@@ -108,12 +110,14 @@ class cStellyderEngineTheme(cStellyderEngineBase):
         
         ###
         if(url.find("www.nytimes.com")!= -1):
+            if (url.find("https")==-1):
+                return -1, None
             if( keyword != None):
                 if (url.find(keyword) == -1):
                     print( "find non related" + url)
                     return -1, None
             return 1 , url
-        elif ((url.find("www.")!=-1) or (url.find(".com")!=-1)):
+        elif ((url.find("www.")!=-1) or (url.find(".com")!=-1) or (url.find("https")!=-1)):
             return -1 , None
         else:
             if(url.find("help.")!=-1):
@@ -153,6 +157,8 @@ class cStellyderEngineTheme(cStellyderEngineBase):
         tag1 = objBs.find_all('div',class_ = class_name)
         target = []
         title= objBs.find('title').string
+        if( title == None):
+            return
         target.append( title + '\n' + '\n')
         for target1 in tag1:   # can try using .descendants
             level2 = target1.find_all('p')
@@ -173,7 +179,7 @@ class cStellyderEngineTheme(cStellyderEngineBase):
         title= title.replace('<','__')
         title= title.replace('>','__')
         
-        search_word = ["cancer", "diabete"]
+        search_word = [" Stem Cell","stem cell"]
         
         flag = 0;
         for i in target:

@@ -24,7 +24,7 @@ user_agent = Init.get_random_userAgent(config_folder+user_agent_data_file)
 referer = 'https://www.google.com'
 target_url='https://www.google.com/search?q=cancer&ie=&oe='
 target_url = 'https://www.nytimes.com/'
-target_url ='https://www.nytimes.com/section/health'
+target_url ='https://www.nytimes.com/'
 headers = {
         'user-agent': user_agent,
 #        'referer': referer,
@@ -39,7 +39,7 @@ headers = {
 #        ':scheme':' https'
     }
 
-Engine = SpyderEngine(target_url, headers,config_folder+'bfs.conf','health')
+Engine = SpyderEngine(target_url, headers,config_folder+'bfs.conf')
 
 o1 = []
 o2 = []
