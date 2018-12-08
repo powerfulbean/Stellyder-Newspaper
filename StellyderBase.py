@@ -24,5 +24,5 @@ class cStellyderEngineBase(object):
         pass
         
     @abstractmethod
-    def engine(self):
+    def engineStart(self):
         pass

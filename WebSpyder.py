@@ -47,21 +47,7 @@ o3 = []
 
 print("Engine Start: the max_depth is "+ str(Engine.Config.max_depth)+'\n')
 
-while (Engine.step< Engine.Config.max_depth):
-    print("depth: " + str(Engine.step+1) + " started\n" )
-    Engine.fetchUrl()
-    Engine.urlAnalysis()
-#    temp1=[]
-#    temp2 = []
-#    Engine.testOutput(temp1,temp2)
-#    o3.append(Engine.strangerBuff)
-#    o1.append(temp1)
-#    o2.append(temp2)
-    print("Starting Fetching Web Page")
-    while not Engine.detailPageBuff.empty():
-        Engine.fetchWebpageContent(Engine.detailPageBuff.get())
-    Engine.step += 1
-    print('\n')
+Engine.engineStart()
         
 
 

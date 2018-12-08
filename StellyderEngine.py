@@ -138,8 +138,22 @@ class cStellyderEngineTheme(cStellyderEngineBase):
         else:
             return 1 , url
         
-    def engine(self):
-        pass
+    def engineStart(self):
+        while (self.step< self.Config.max_depth):
+            print("depth: " + str(self.step+1) + " started\n" )
+            self.fetchUrl()
+            self.urlAnalysis()
+        #    temp1=[]
+        #    temp2 = []
+        #    Engine.testOutput(temp1,temp2)
+        #    o3.append(Engine.strangerBuff)
+        #    o1.append(temp1)
+        #    o2.append(temp2)
+            print("Starting Fetching Web Page")
+            while not self.detailPageBuff.empty():
+                self.fetchWebpageContent(self.detailPageBuff.get())
+            self.step += 1
+            print('\n')
         
     
     def testOutput(self,target1,target2):
