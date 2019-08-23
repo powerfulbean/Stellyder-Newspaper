@@ -1,6 +1,6 @@
 # Stellyder
 A web crawler for newspaper </br>
-###Libraries needed: 
+### Libraries needed: </br>
 abc
 six
 BS4
