@@ -1,4 +1,4 @@
-# Stellyder
+# Stellyder-Newspaper
 A web crawler for newspaper </br>
 ### Libraries needed: </br>
 abc
